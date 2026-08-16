@@ -17,8 +17,10 @@
 </div>
 
 <!-- Sidebar Component -->
-<aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
-       class="fixed inset-y-0 left-0 z-50 flex w-60 flex-col border-r border-slate-200 bg-white transition-transform duration-300 ease-in-out md:translate-x-0">
+<aside id="app-sidebar"
+       style="transform: translateX(-100%)"
+       x-effect="$el.style.transform = (window.innerWidth >= 768 || sidebarOpen) ? 'translateX(0)' : 'translateX(-100%)'"       
+       class="fixed inset-y-0 left-0 z-50 flex w-60 flex-col border-r border-slate-200 bg-white transition-transform duration-300 ease-in-out">
     
     <!-- Logo area -->
     <div class="flex h-16 items-center border-b border-slate-200 px-6 justify-between">

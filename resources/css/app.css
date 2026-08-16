@@ -10,3 +10,17 @@
 }
 
 [x-cloak] { display: none !important; }
+
+/* ── Mobile Sidebar ─────────────────────────────────────── */
+/* Sidebar selalu tampil di desktop (fallback sebelum Alpine load) */
+@media (min-width: 768px) {
+    #app-sidebar {
+        transform: translateX(0) !important;
+    }
+}
+/* Lock body scroll saat sidebar buka di mobile */
+@media (max-width: 767px) {
+    body.sidebar-open {
+        overflow: hidden;
+    }
+}
